@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f <CEPH_CONF> ]
+then
+   echo "Stopped volumedriver, cleaning up mountpoints..."
+   umount <DFS_MOUNTPOINT>
+   echo "... done"
+fi

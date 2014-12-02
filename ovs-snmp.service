@@ -1,0 +1,14 @@
+[Unit]
+Description="ovs snmp server"
+After=ovs-watcher-framework
+
+[Service]
+Environment=PYTHONPATH=/opt/OpenvStorage
+WorkingDirectory=/opt/OpenvStorage
+ExecStart= /usr/bin/python2 /opt/OpenvStorage/ovs/extensions/snmp/ovssnmpserver.py
+Type=simple
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

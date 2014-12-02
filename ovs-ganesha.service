@@ -1,0 +1,17 @@
+[Unit]
+Description="ovs ganesha"
+After=ovs-watcher-volumedriver.service
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+Environment=VFS_FSAL_LOGFILE=/var/log/ovs/volumedriver/vpool.log
+
+ExecStartPre=/usr/lib/systemd/system/ovs-ganesha-pre-start
+ExecStart=/usr/bin/ganesha-cf
+ExecStopPost=/usr/lib/systemd/system/ovs-ganesha-post-stop
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

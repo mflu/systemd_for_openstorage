@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "<HYPERVISOR_TYPE>" = "VMWARE" ] ; then
+  grep -q '<VPOOL_MOUNTPOINT> ' /etc/exports || echo '<VPOOL_MOUNTPOINT> *(rw,fsid=<UUID>,async,no_root_squash,no_subtree_check)' >> /etc/exports
+  exportfs -u *:<VPOOL_MOUNTPOINT>
+  exportfs *:<VPOOL_MOUNTPOINT>
+fi

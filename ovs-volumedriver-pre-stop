@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "<HYPERVISOR_TYPE>" = "VMWARE" ] ; then
+  exportfs -u *:<VPOOL_MOUNTPOINT>
+  grep -v "<VPOOL_MOUNTPOINT> *" /etc/exports > /etc/exports_ovs && mv /etc/exports_ovs /etc/exports
+fi
+if mount | grep <VPOOL_MOUNTPOINT> ; then
+  fusermount -u <VPOOL_MOUNTPOINT>
+fi

@@ -1,0 +1,15 @@
+[Unit]
+Description="ovs workers"
+After=ovs-watcher-framework.service
+
+[Service]
+Group=ovs
+User=ovs
+WorkingDirectory=/opt/OpenvStorage
+ExecStart=/usr/bin/celery worker -A ovs.celery_run -l info -Q ovs_generic,ovs_<WORKER_QUEUE>
+Type=simple
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

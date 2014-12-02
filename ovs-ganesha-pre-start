@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -f <CEPH_CONF> ]
+then
+   ceph-fuse <DFS_MOUNTPOINT> --conf=<CEPH_CONF>
+   echo "Mounted ceph, starting volumedriver..."
+fi
