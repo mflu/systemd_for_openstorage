@@ -1,6 +1,7 @@
 [Unit]
 Description=The nginx HTTP and reverse proxy server
-After=syslog.target network.target remote-fs.target nss-lookup.target ovs-watcher-framework
+Requires=ovs-watcher-framework.service
+After=syslog.target network.target remote-fs.target nss-lookup.target ovs-watcher-framework.service
 
 [Service]
 Type=forking

@@ -1,6 +1,7 @@
 [Unit]
 Description=Starts and stops a single elasticsearch instance on this system
 Documentation=http://www.elasticsearch.org
+After=local-fs.target network.target
 
 [Service]
 Type=forking

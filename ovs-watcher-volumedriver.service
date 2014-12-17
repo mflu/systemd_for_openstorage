@@ -1,5 +1,6 @@
 [Unit]
 Description="Watcher for Open vStorage master services"
+Wants=ovs-failovercache.service ovs-ganesha.service ovs-volumedriver.service ovs-volumerouter-consumer.service
 
 [Service]
 Environment=PYTHONPATH=/opt/OpenvStorage

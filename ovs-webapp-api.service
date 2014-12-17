@@ -1,5 +1,6 @@
 [Unit]
 Description="webapp api"
+Requires=ovs-watcher-framework.service
 After=ovs-watcher-framework.service
 
 [Service]

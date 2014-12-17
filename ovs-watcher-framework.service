@@ -1,5 +1,6 @@
 [Unit]
 Description="Watcher for Open vStorage master services"
+Wants=ovs-nginx.service ovs-webapp-api.service ovs-scheduled-tasks.service ovs-snmp.service ovs-workers.service
 
 [Service]
 Environment=PYTHONPATH=/opt/OpenvStorage
